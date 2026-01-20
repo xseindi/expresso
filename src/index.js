@@ -32,8 +32,6 @@ app.catch (function (request, response) {
 	response.status ($.url.header.status.error.found).html (response.output.render ())
 	})
 
-app.listen ()
-
 /**
  * xxx
  *
@@ -63,6 +61,9 @@ app.listen ()
  *
  * xxx://xxx.xxx.xxx/xxx
  */
+
+// app.listen ()
+module.exports = exports = app.app
 
 /**
  * the end
