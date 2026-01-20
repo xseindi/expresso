@@ -8,7 +8,7 @@
  * xxx://xxx.xxx.xxx/xxx
  */
 
-var $ = require ("./node_packages/script.io.js")
+var $ = require ("script.io.js")
 var express = require ("express.io.js")
 
 var app = new express ()
