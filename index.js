@@ -10,6 +10,7 @@
 
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
+const {define} = $
 
 var app = new express ()
 
@@ -29,6 +30,7 @@ app.get ("/robots.txt", function (request, response) {
 	})
 
 app.catch (function (request, response) {
+	console.log (request.header)
 	response.status ($.url.header.status.error.found).html (response.output.render ())
 	})
 
@@ -62,8 +64,8 @@ app.catch (function (request, response) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-app.listen (process.env.PORT || 3000)
-module.exports = exports = app.app
+app.listen ()
+define (module).export (app.app)
 
 /**
  * the end

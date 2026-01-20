@@ -1,21 +1,27 @@
 {
-"name": "netizen",
-"description": "Netizen WebApp",
-"version": "0.0.0",
-"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
-"contributors": ["Seindi Rahmat Barus <xseindi@gmail.com>"],
-"license": "MIT",
-"keywords": ["express", "vue", "mongodb"],
-"main": "index.js",
-"files": [
-	"src/",
-	"index.js"
+	"name": "netizen",
+	"description": "Netizen WebApp",
+	"version": "0.0.0",
+	"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
+	"contributors": [
+		"Seindi Rahmat Barus <xseindi@gmail.com>"
 	],
-"scripts": {
-	"start": "node index.js"
+	"license": "MIT",
+	"keywords": [
+		"express",
+		"vue",
+		"mongodb"
+	],
+	"main": "index.js",
+	"files": [
+		"src/",
+		"index.js"
+	],
+	"scripts": {
+		"start": "node index.js"
 	},
-"dependencies": {
-	"script.io.js": "^1.0.2",
-	"express.io.js": "^1.0.2"
+	"dependencies": {
+		"script.io.js": "^1.0.4",
+		"express.io.js": "^1.0.4"
 	}
 }
