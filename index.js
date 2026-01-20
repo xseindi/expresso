@@ -62,7 +62,7 @@ app.catch (function (request, response) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-// app.listen ()
+app.listen (process.env.PORT || 3000)
 module.exports = exports = app.app
 
 /**

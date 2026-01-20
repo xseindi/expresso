@@ -6,12 +6,13 @@
 "contributors": ["Seindi Rahmat Barus <xseindi@gmail.com>"],
 "license": "MIT",
 "keywords": ["express", "vue", "mongodb"],
-"main": "src/index.js",
+"main": "index.js",
 "files": [
-	"src/"
+	"src/",
+	"index.js"
 	],
 "scripts": {
-	"start": "node src/index.js"
+	"start": "node index.js"
 	},
 "dependencies": {
 	"script.io.js": "^1.0.2",
