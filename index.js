@@ -8,8 +8,8 @@
  * xxx://xxx.xxx.xxx/xxx
  */
 
-var $ = require ("./node_packages/library.min.js")
-var express = require ("express.min.js")
+var $ = require ("./node_packages/script.io.js")
+var express = require ("express.io.js")
 
 var app = new express ()
 
