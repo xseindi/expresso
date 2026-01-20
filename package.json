@@ -21,7 +21,7 @@
 		"start": "node index.js"
 	},
 	"dependencies": {
-		"script.io.js": "^1.0.5",
-		"express.io.js": "^1.0.5"
+		"script.io.js": "^1.0.6",
+		"express.io.js": "^1.0.6"
 	}
 }
