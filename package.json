@@ -1,0 +1,19 @@
+{
+"name": "netizen",
+"description": "Netizen WebApp",
+"version": "0.0.0",
+"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
+"contributors": ["Seindi Rahmat Barus <xseindi@gmail.com>"],
+"license": "MIT",
+"keywords": ["express", "vue", "mongodb"],
+"main": "index.js",
+"files": [
+	"index.js"
+	],
+"scripts": {
+	"start": "node index.js"
+	},
+"dependencies": {
+	"express.min.js": "^20.0.0"
+	}
+}
