@@ -11,8 +11,9 @@
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
 const {define} = $
+$.config = {internet: true}
 
-var app = new express ()
+var app = new express ($.config)
 
 app.static ()
 
