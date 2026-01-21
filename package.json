@@ -26,6 +26,6 @@
 		"express.io.js": "^1.0.1154"
 	},
 	"config": {
-		"internet": false
+		"internet": true
 	}
 }
