@@ -28,7 +28,6 @@ var app = new express ($.config)
 app.static ()
 
 app.setup (function (request, response, next) {
-	request.error.push ("forbidden")
 	next ()
 	})
 

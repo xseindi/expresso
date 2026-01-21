@@ -1,7 +1,7 @@
 {
 	"name": "netizen",
 	"description": "Netizen WebApp",
-	"version": "1.0.1248",
+	"version": "0.0.0",
 	"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
 	"contributors": [
 		"Seindi Rahmat Barus <xseindi@gmail.com>"
@@ -22,8 +22,8 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^1.0.1248",
-		"express.io.js": "^1.0.1248"
+		"script.io.js": "^1.0.1611",
+		"express.io.js": "^1.0.1611"
 	},
 	"config": {
 		"internet": true,
