@@ -18,10 +18,14 @@
 		"index.js"
 	],
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^1.0.6",
-		"express.io.js": "^1.0.6"
+		"script.io.js": "^1.0.918",
+		"express.io.js": "^1.0.918"
+	},
+	"config": {
+		"internet": false
 	}
 }

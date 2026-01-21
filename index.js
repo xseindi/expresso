@@ -10,8 +10,8 @@
 
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
+$.config = require ("./package.json").config
 const {define} = $
-$.config = {internet: true}
 
 var app = new express ($.config)
 
@@ -22,8 +22,7 @@ app.setup (function (request, response, next) {
 	})
 
 app.get ("/", function (request, response) {
-	var html = new $.html ()
-	response.html (html.render ())
+	response.html (response.output.render ())
 	})
 
 app.get ("/robots.txt", function (request, response) {
@@ -31,7 +30,6 @@ app.get ("/robots.txt", function (request, response) {
 	})
 
 app.catch (function (request, response) {
-	console.log (request.header)
 	response.status ($.url.header.status.error.found).html (response.output.render ())
 	})
 
@@ -66,7 +64,7 @@ app.catch (function (request, response) {
  */
 
 app.listen ()
-define (module).export (app.app)
+define (module).export (app.export ())
 
 /**
  * the end
