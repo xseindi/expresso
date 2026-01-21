@@ -10,7 +10,7 @@
 
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
-$.config = require ("./package.json").config
+$.config = require ($.path.r ("package.json")).config
 const {define} = $
 
 var app = new express ($.config)
@@ -18,10 +18,12 @@ var app = new express ($.config)
 app.static ()
 
 app.setup (function (request, response, next) {
+	request.error.push ("forbidden")
 	next ()
 	})
 
 app.get ("/", function (request, response) {
+	console.log ($.path.join (process.cwd (), "api/test.js"))
 	response.html (response.output.render ())
 	})
 
