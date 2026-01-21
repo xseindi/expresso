@@ -22,10 +22,10 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^1.0.918",
-		"express.io.js": "^1.0.918"
+		"script.io.js": "^1.0.919",
+		"express.io.js": "^1.0.919"
 	},
 	"config": {
-		"internet": false
+		"internet": true
 	}
 }
