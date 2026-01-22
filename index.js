@@ -8,10 +8,23 @@
  * xxx://xxx.xxx.xxx/xxx
  */
 
+/*
+1024
+1048576
+*/
+
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
-$.config = require ($.path.r ("package.json")).config
 const {define} = $
+var __dir = process [["C", "W", "D"].join ("").small ()] ()
+var j_son = {
+	app: require ($.path.join (__dir, "src/db/app.json")),
+	theme: require ($.path.join (__dir, "src/db/theme.json")),
+	}
+
+express.config = require ($.path.join (__dir, "package.json")).config
+express.config.dir = (__dir)
+express.config.db.collection = j_son
 
 /**
  * xxx
@@ -23,11 +36,12 @@ const {define} = $
  * xxx://xxx.xxx.xxx/xxx
  */
 
-var app = new express ($.config)
+var app = new express ()
 
 app.static ()
 
-app.setup (function (request, response, next) {
+app.setup (async function (request, response, next) {
+	console.log (request.app)
 	next ()
 	})
 
@@ -41,8 +55,7 @@ app.setup (function (request, response, next) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-app.get ("/", function (request, response) {
-	console.log ($.path.join (process.cwd (), "api/test.js"))
+app.get ("/", async function (request, response) {
 	response.html (response.output.render ())
 	})
 
@@ -56,7 +69,7 @@ app.get ("/", function (request, response) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-app.get ("/robots.txt", function (request, response) {
+app.get ("/robots.txt", async function (request, response) {
 	response.html ("xxx")
 	})
 
@@ -80,7 +93,7 @@ app.get ("/robots.txt", function (request, response) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-app.catch (function (request, response) {
+app.catch (async function (request, response) {
 	response.status ($.url.header.status.error.found).html (response.output.render ())
 	})
 

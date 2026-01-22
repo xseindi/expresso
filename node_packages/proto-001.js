@@ -1,0 +1,241 @@
+import php from "../zend/engine";
+
+php.url = function () {}
+
+php.url.query = function () {}
+php.url.query.build = function (query: any = {}, question: boolean = true) {
+	var q: any = [];
+	for (var i in query) q.push (`${i}=${query [i]}`);
+	if (q.length) q = (question ? "?" : "") + q.join ("&");
+	else q = q.join ("");
+	return q;
+	}
+
+php.parse_url = function (input: string) {
+	var url = new URL (input);
+	return {
+		address: url.origin,
+		canonical: url.href,
+		host: {name: url.hostname, address: url.host},
+		domain: {},
+		protocol: url.protocol.substr (0, (url.protocol.length - 1)),
+		path: url.pathname,
+		q: url.searchParams,
+		parse: url,
+		}
+	}
+
+php.parse_url.rebase = function (input: string) {}
+
+php.is_agent_phone = function (agent: string) {
+	var browser = agent.toLowerCase ();
+	if (browser.indexOf ("iphone") !== undefined && browser.indexOf ("iphone") > (- 1)) return true;
+	else if (browser.indexOf ("android") !== undefined && browser.indexOf ("android") > (- 1)) return true;
+	else return false;
+	}
+
+php.is_agent_crawler = function (agent: string) {
+	var pattern = [
+		/Googlebot/i,
+		/Bingbot/i,
+		/YandexBot/i,
+		/Facebot/i,
+		/Meta/i, /ExternalAgent/i,
+		/Twitterbot/i,
+		/WhatsApp/i,
+		/Slurp/i,
+		/ClaudeBot/i, /Claude/i,
+		/GPTBot/i,
+		/DuckDuckBot/i,
+		/Baiduspider/i,
+		/rogerbot/i,
+		/DotBot/i,
+		/SemrushBot/i,
+		/Ahrefs/i,
+		/Scrapy/i,
+		];
+	for (var crawler of pattern) {
+		if (crawler.test (agent)) {
+			return true;
+			}
+		}
+	return false;
+	}
+
+php.markup = class {
+	data: any = [];
+	constructor (... data: any) {
+		if (data.length) this.data = [... data];
+		}
+	push (tab: number, data: any) {
+		if (tab) this.data.push (("\t").repeat (tab) + data);
+		else this.data.push (data);
+		return this;
+		}
+	render () {
+		return this.data.join ("\n");
+		}
+	}
+
+php.render = function (markup: any, variable: any = {}, tab: number = 0) {
+	if (Array.isArray (markup)) {
+		if (typeof variable === "number") tab = variable;
+		if (tab) markup = markup.map (function (markup) {
+			if (markup.startsWith (php.render.tag.open)) return markup;
+			else return ("\t").repeat (tab) + markup;
+			});
+		markup = markup.join ("\n");
+		}
+	for (var key in variable) {
+		var value = variable [key];
+		if (Array.isArray (value)) value = value.join ("\n");
+		markup = markup.split (php.render.tag (key)).join (value);
+		}
+	return markup;
+	}
+
+php.render.tag = function (id: string) { return [php.render.tag.open, id, php.render.tag.close].join (" "); }
+php.render.tag.open = "{{";
+php.render.tag.close = "}}";
+
+php.char = {alpha: {numeric: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"}}
+
+php.to_integer = function (input: any) { return parseInt (input) || 0; }
+
+php.date = class {
+	date: any;
+	constructor (date: any) {
+		if (date instanceof Date) this.date = date;
+		else if (date) this.date = new Date (date);
+		else this.date = new Date ();
+		}
+	string () {
+		return [this.year (), this.month (), this.day ()].join ("-");
+		}
+	iso () { return this.date.toISOString (); }
+	universal () { return this.date.toISOString (); }
+	year () { return this.date.getFullYear (); }
+	month (pad: boolean = true) { if (pad) return (this.date.getMonth () + 1).toString ().padStart (2, "0"); else return this.date.getMonth () + 1; }
+	day (pad: boolean = true) { if (pad) return this.date.getDate ().toString ().padStart (2, "0"); else return this.date.getDate (); }
+	}
+
+php.date.io = php.date;
+
+php.date.time = function (... date: any) { return new Date (... date as []); }
+php.date.month = {name: {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August", 9: "September", 10: "October", 11: "November", 12: "December"}}
+php.date.day = {name: {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 7: "Sunday"}}
+php.date.embed = function () {}
+php.date.embed.format = function (input: any) { if ((input = parseInt (input)) > 3600) return php.date.embed.hour (input); else return php.date.embed.minute (input); }
+php.date.embed.hour = function (input: any) { var hour = Math.floor ((input = parseInt (input)) / 3600); var minute = Math.floor ((input % 3600) / 60); var second = input % 60; return `${hour}:${String (minute).padStart(2, "0")}:${String (second).padStart(2, "0")}`; }
+php.date.embed.minute = function (input: any) { var minute = Math.floor ((input = parseInt (input)) / 60); var second = input % 60; return `${String (minute).padStart(2, "0")}:${String (second).padStart(2, "0")}`; }
+
+php.string = function () {}
+php.string.begin = function (search: string, input: string) { return input.startsWith (search); }
+php.string.small = function (string: string) { return string.toLowerCase (); }
+php.str_after = function str_after (search: string, string: string) { var pos = string.indexOf (search); if (pos !== undefined) return string.substr (pos + search.length); else return ""; }
+php.str_before = function str_before (search: string, string: string) { return string.split (search) [0]; }
+php.str_normalize = function (input: string) { return input.normalize ("NFD").replace (/[\u0300-\u036f]/g, ""); }
+php.str_begin = function (input: string, search: string) { return input.startsWith (search); }
+
+php.timeout = function (context: any, time: number = php.timeout.dummy) { return setTimeout (context, time); }
+php.timeout.clear = function (timeout: any) { return clearTimeout (timeout); }
+php.timeout.dummy = 88;
+
+php.error = class {}
+php.error.HOST_NOT_FOUND = "Host not Found";
+php.error.VISITOR_AGENT = "";
+php.error.forbidden = 403;
+php.error.found = 404;
+
+php.promise = function (context: any) { return new Promise (function (resolve, reject) { context (function (value: any = true) { resolve (value); }, function (value: any = false) { reject (value); }); }); }
+
+php.object = function () {}
+php.object.key = Object.keys;
+php.object.clone = function (object: any = {}) { return JSON.parse (JSON.stringify (object)); }
+php.object.assign = function (object: any, data: any, extra: any = {}) {
+	var output: any = {}
+	for (var i in (object = php.object.clone (object))) output [i] = object [i];
+	for (var i in (data = php.object.clone (data))) output [i] = data [i];
+	for (var i in (extra = php.object.clone (extra))) output [i] = extra [i];
+	return output;
+	}
+
+php.array = function (array: any = []) { return new php.array.io (array); }
+php.array.first = function (array: any = []) { for (var i in array) return array [i]; return undefined; }
+php.array.last = function (array: any = []) { var value; for (var i in array) value = array [i]; return value; }
+php.array.shuffle = function (input: any = []) { var array = JSON.parse (JSON.stringify (input)); var current = array.length, random; while (current !== 0) { random = Math.floor (Math.random () * current); current --; [array [current], array [random]] = [array [random], array [current]]; } return array; }
+php.array.page = function (array: any = [], page: number = 1, limit: number = 20) { return array.slice (((page - 1) * limit), (page * limit)); }
+php.array.sort = function (sort: string, array: any = [], order: string = "ascending") {
+	var type = "string", data = JSON.parse (JSON.stringify (array));
+	if (array.length) if (typeof array [0][sort] === "number") type = "number";
+	if (order === "ascending") {
+		if (type === "string") data.sort (function (a: any, b: any) { return a [sort].localeCompare (b [sort]); });
+		if (type === "number") data.sort (function (a: any, b: any) { return a [sort] - b [sort]; });
+		}
+	if (order === "descending") {
+		if (type === "string") data.sort (function (a: any, b: any) { return b [sort].localeCompare (a [sort]); });
+		if (type === "number") data.sort (function (a: any, b: any) { return b [sort] - a [sort]; });
+		}
+	return data;
+	}
+php.array.distinct = function (array: any = [], key: string = "id", distinct: any = []) {
+	return array.filter (function (data: any) {
+		if (distinct.includes (data [key])) return false;
+		else {
+			distinct.push (data [key]);
+			return true;
+			}
+		});
+	}
+
+php.array.io = class {
+	array: any = [];
+	data: any;
+	constructor (array: any = []) {
+		this.array = array;
+		}
+	one () { return php.array.first (this.data || this.array); }
+	find (filter: any = {}, type: string = "default") {
+		var length = Object.keys (filter).length;
+		this.data = (this.data || this.array).filter (function (array: any) {
+			if (type === "array") {
+				for (var i in filter) {
+					for (var x in filter [i]) {
+						if (array [i].includes (filter [i][x])) return true;
+						}
+					}
+				return false;
+				}
+			else {
+				var found = 0;
+				for (var i in filter) if (array [i] === filter [i]) found ++;
+				return found === length;
+				}
+			});
+		return this;
+		}
+	filter (filter: any) {
+		if (filter) this.data = this.array.filter (function (array: any, index: number) {
+			var error = 0;
+			for (var i in filter) {
+				if (typeof filter [i] === "object") {
+					if (filter [i].equal === false) {
+						if (filter [i].value !== array [i]) continue;
+						else error ++;
+						}
+					}
+				else if (filter [i] === array [i]) continue;
+				else error ++;
+				}
+			if (error) return false;
+			else return true;
+			});
+		else this.data = this.array;
+		return this;
+		}
+	}
+
+php.number = function () {}
+php.number.shuffle = function (min: number, max: number) { return Math.floor (Math.random () * (min - max + 1)) + max; }
+
+//

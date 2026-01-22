@@ -1,0 +1,7 @@
+[
+{"id": 1, "reference": "", "name": "Default", "slug": "default", "version": ["1.0.0"], "type_of": "public"},
+{"id": 2, "reference": "", "name": "Chronicle", "slug": "chronicle", "version": ["1.0.0"], "type_of": "public"},
+{"id": 3, "reference": "", "name": "Blog", "slug": "blog", "version": ["1.0.0"], "type_of": "public"},
+
+{"id": 100, "reference": "", "name": "Default — Control Panel", "slug": "default-cpanel", "version": ["1.0.0"], "type_of": "system"}
+]

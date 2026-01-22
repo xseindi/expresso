@@ -1,0 +1,6 @@
+[
+{"id": 1, "reference": "", "name": "Netizen", "host": "netizen.io", "theme": 1, "status": "active", "description": ""},
+{"id": 2, "reference": "", "name": "Netizen — Control Panel", "host": "cloud.netizen.io", "theme": 100, "status": "active", "description": ""},
+{"id": 100, "reference": 1, "host": "sexpresso.vercel.app"},
+{"id": 100, "reference": 1, "host": "localhost"}
+]

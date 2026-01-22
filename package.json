@@ -1,6 +1,6 @@
 {
-	"name": "netizen",
-	"description": "Netizen WebApp",
+	"name": "newbizen",
+	"description": "Newbie Citizen — Just another Web as a Service Platform",
 	"version": "0.0.0",
 	"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
 	"contributors": [
@@ -22,11 +22,14 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^1.0.1611",
-		"express.io.js": "^1.0.1611"
+		"script.io.js": "^2026.122.1019",
+		"express.io.js": "^2026.122.1019"
 	},
 	"config": {
 		"internet": true,
-		"port": null
+		"port": null,
+		"db": {
+			"driver": "json"
+		}
 	}
 }
