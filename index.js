@@ -18,7 +18,7 @@ var express = require ("express.io.js")
 const {define} = $
 var __dir = process [["C", "W", "D"].join ("").small ()] ()
 var {fileURLToPath} = require ("url")
-__dir = $.path.join (fileURLToPath (import.meta.url))
+__dir = "."
 
 var j_son = {
 	app: require ($.path.join (__dir, "src/db/app.json")),

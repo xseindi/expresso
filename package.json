@@ -26,8 +26,8 @@
 		"express.io.js": "^2026.122.1019"
 	},
 	"config": {
-		"internet": false,
-		"port": 80,
+		"internet": true,
+		"port": null,
 		"db": {
 			"driver": "json"
 		}
