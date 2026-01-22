@@ -16,7 +16,7 @@
 var $ = require ("script.io.js")
 var express = require ("express.io.js")
 const {define} = $
-var __dir = process [["C", "W", "D"].join ("").small ()] ()
+var __dir = process.cwd ()
 var j_son = {
 	app: require ($.path.join (__dir, "src/db/app.json")),
 	theme: require ($.path.join (__dir, "src/db/theme.json")),
