@@ -1,7 +1,25 @@
 [
-{"id": 1, "reference": "", "name": "Default", "slug": "default", "version": ["1.0.0"], "type_of": "public"},
-{"id": 2, "reference": "", "name": "Chronicle", "slug": "chronicle", "version": ["1.0.0"], "type_of": "public"},
-{"id": 3, "reference": "", "name": "Blog", "slug": "blog", "version": ["1.0.0"], "type_of": "public"},
+{
+"id": "ca7523c5-4f2f-44be-9700-12cb7f920891", "reference": null,
+"name": "Default", "slug": "default",
+"version": ["1.0.0"],
+"type": null, "type_of": "public",
+"description": null
+},
 
-{"id": 100, "reference": "", "name": "Default — Control Panel", "slug": "default-cpanel", "version": ["1.0.0"], "type_of": "system"}
+{
+"id": "75c792df-56d2-421e-bf5e-7b5b367ecd2e", "reference": null,
+"name": "Chronicle", "slug": "chronicle",
+"version": ["1.0.0"],
+"type": null, "type_of": "public",
+"description": null
+},
+
+{
+"id": "d8933abc-a6b9-489b-a18f-ce2fb68d3f2f", "reference": null,
+"name": "Blog", "slug": "blog",
+"version": ["1.0.0"],
+"type": "blog", "type_of": "public",
+"description": null
+}
 ]

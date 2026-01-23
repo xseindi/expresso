@@ -1,6 +1,6 @@
 {
 	"name": "newbizen",
-	"description": "Newbie Citizen — Just another Web as a Service Platform",
+	"description": "Newbie Citizen — Just another Publishing Platform",
 	"version": "0.0.0",
 	"author": "Seindi Rahmat Barus <xseindi@gmail.com>",
 	"contributors": [
@@ -22,18 +22,25 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^2026.122.1345",
-		"express.io.js": "^2026.122.1345"
+		"script.io.js": "^2026.123.955",
+		"express.io.js": "^2026.123.955"
 	},
 	"config": {
 		"internet": true,
+		"host": "0.0.0.0",
 		"port": null,
 		"db": {
-			"id": "db_test",
+			"id": "6971e225002b29cb44a5",
 			"driver": "appwrite",
 			"host": "https://nyc.cloud.appwrite.io/v1",
 			"project": "6970d138001f1ea7a78b",
-			"collection": {}
+			"collection": {
+				"account": "69722e8e0017fa4fef69",
+				"app": "6971e2b70020e68f70fe",
+				"instance": "6971e42000101df62371",
+				"theme": "6971e33000005e07788a",
+				"log": "6971e34e0031f9a14181"
+			}
 		}
 	}
 }

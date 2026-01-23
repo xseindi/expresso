@@ -18,10 +18,16 @@ var express = require ("express.io.js")
 const {define} = $
 var __dir = process [["C", "W", "D"].join ("").small ()] ()
 
+console.log ($.unique.id ())
+console.log ($.unique.id ())
+console.log ($.unique.id ())
+
 express.config = require ($.path.current ("package.json")).config
 express.config.dir = (__dir)
-if (false) express.config.db.collection = {
+if (true) express.config.db.json = {
+	account: require ($.path.current ("src/db/account.json")),
 	app: require ($.path.current ("src/db/app.json")),
+	instance: require ($.path.current ("src/db/instance.json")),
 	theme: require ($.path.current ("src/db/theme.json")),
 	}
 
@@ -40,6 +46,7 @@ var app = new express ()
 app.static ()
 
 app.setup (async function (request, response, next) {
+	console.log (request.app);
 	next ();
 	})
 
