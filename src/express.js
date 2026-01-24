@@ -43,7 +43,7 @@ async function setup (request, response, next) {
 				}
 			}
 		else {
-			this.error.push ("exist")
+			request.error.push ("exist")
 			}
 		}
 	next ()
