@@ -1,0 +1,7 @@
+{
+"article": "/article/:id/:slug/",
+"page": {
+	"about": "/about/"
+	},
+"*": ""
+}

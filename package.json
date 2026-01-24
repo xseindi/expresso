@@ -22,8 +22,7 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"script.io.js": "^2026.123.955",
-		"express.io.js": "^2026.123.955"
+		"express.exe": "^0.0.1769246437823"
 	},
 	"config": {
 		"internet": true,

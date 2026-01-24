@@ -1,7 +1,7 @@
 [
 
 {
-"id": "2b385322-2417-4d6f-ae21-ce774bb3b7ae", "reference": null,
+"serial": "2b385322-2417-4d6f-ae21-ce774bb3b7ae", "reference": null,
 "name": "Hello World",
 "gear": {
 	"processor": {"core": 1},
@@ -16,7 +16,7 @@
 },
 
 {
-"id": "fa800a5f-36af-48af-8afe-ffa7c5a049c5", "reference": null,
+"serial": "fa800a5f-36af-48af-8afe-ffa7c5a049c5", "reference": null,
 "name": "Cooper",
 "gear": {
 	"processor": {"core": 1},
@@ -31,7 +31,7 @@
 },
 
 {
-"id": "66004ed6-0c52-4aca-a490-cbec2b01bf9d", "reference": null,
+"serial": "66004ed6-0c52-4aca-a490-cbec2b01bf9d", "reference": null,
 "name": "Silver",
 "gear": {
 	"processor": {"core": 1},
@@ -46,7 +46,7 @@
 },
 
 {
-"id": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "reference": null,
+"serial": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "reference": null,
 "name": "Gold",
 "gear": {
 	"processor": {"core": 2},

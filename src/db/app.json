@@ -1,17 +1,60 @@
 [
 
-{"id": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "www.newbizen.com", "type": "alias", "status": "active"},
-{"id": "7db7c726-6555-41d3-8b74-a699a0aa0c16", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.pro", "type": "alias", "status": "active"},
-{"id": "e1488462-1509-425a-94a1-55d37aa64de7", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "sexpresso.vercel.app", "type": "alias", "status": "active"},
-{"id": "97c19534-8d6d-4035-8e85-447151e31513", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "localhost", "type": "alias", "status": "active"},
-{"id": "4e17c17b-5a9a-43e5-9b8c-42b5e3254563", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.com", "type": "control-panel", "status": "active"},
-{"id": "81d1313a-355e-4191-8797-a6351ee89dfa", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.pro", "type": "control-panel", "status": "active"},
+{"serial": "f2c8a6ac-2900-4db8-b602-545a239fb187", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.com", "type": "alias", "status": "active"},
+{"serial": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "www.newbizen.com", "type": "alias", "status": "active"},
+{"serial": "7db7c726-6555-41d3-8b74-a699a0aa0c16", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.pro", "type": "alias", "status": "active"},
+{"serial": "e1488462-1509-425a-94a1-55d37aa64de7", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "sexpresso.vercel.app", "type": "alias", "status": "active"},
+{"serial": "97c19534-8d6d-4035-8e85-447151e31513", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "localhost", "type": "alias", "status": "active"},
+{"serial": "4e17c17b-5a9a-43e5-9b8c-42b5e3254563", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.com", "type": "control-panel", "status": "active"},
+{"serial": "81d1313a-355e-4191-8797-a6351ee89dfa", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.pro", "type": "control-panel", "status": "active"},
 {
-"id": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "reference": null,
+"serial": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "reference": null,
 "name": "Newbie Citizen",
-"host": "newbizen.com",
-"theme": "ca7523c5-4f2f-44be-9700-12cb7f920891",
-"instance": {"id": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "since": 0},
+"host": "4c24018f-81a7-48d3-9e05-2b53a388b0e4.newbizen.com",
+"instance": {"serial": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "since": 0, "location": "US"},
+"theme": {
+	"list": [
+		{
+		"status": "active",
+		"serial": "ca7523c5-4f2f-44be-9700-12cb7f920891",
+		"version": "1.0.0",
+		"data": {
+			"index:layout": "default",
+			"page-index:layout": "default",
+			"page:layout": "default",
+			"post-index:layout": "default",
+			"post-video:layout": "default",
+			"post-music:layout": "default",
+			"post-photo:layout": "default",
+			"post:layout": "default",
+			"archive:layout": "default",
+			"tag:layout": "default",
+			"categories:layout": "default"
+			}}
+		]
+	},
+"meta": {
+	"site:name": "",
+	"site:title": "",
+	"site:tagline": "",
+	"site:description": "",
+	"meta:description": null,
+	"meta:viewport": null,
+	"meta:generator": null,
+	"meta:keyword": [],
+	"meta:robot": null,
+	"meta:rating": null,
+	"setting": {
+		"manifest.json": false,
+		"feed.xml": false,
+		"feed.xml:atom": false
+		},
+	"print_f": {
+		"title:index": "{site:title}",
+		"title:page": "{page:title} — {site:name}",
+		"title:post": "{post:title} — {site:name}"
+		}
+	},
 "type": "primary", "status": "active",
 "description": null
 }

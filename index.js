@@ -9,17 +9,25 @@
  */
 
 var $ = require ("script.io.js")
-var express = require ("express.io.js")
-const {define} = $
+var express = require ("express.exe")
 var __dir = process [["C", "W", "D"].join ("").small ()] ()
+var __PORT = process [["E", "N", "V"].join ("").small ()].PORT
+const {define} = $
 
-express.config = require ($.path.current ("package.json")).config
-express.config.dir = (__dir)
-if (true) express.config.db.json = {
-	account: require (("./src/db/account.json")),
-	app: require (("./src/db/app.json")),
-	instance: require (("./src/db/instance.json")),
-	theme: require (("./src/db/theme.json")),
+$.config = require ("./package.json").config
+$.config.dir = (__dir)
+if (true) $.config.db.json = {
+	account: require ("./src/db/account.json"),
+	app: require ("./src/db/app.json"),
+	instance: require ("./src/db/instance.json"),
+	theme: require ("./src/db/theme.json"),
+	}
+$.router = $.config.router = require ("./src/router.json")
+$.express = require ("./src/express.js")
+$.config.port = $.config.port || __PORT
+
+var the = {
+	date: new $.date.io (),
 	}
 
 /**
@@ -32,13 +40,18 @@ if (true) express.config.db.json = {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-var app = new express ()
+var app = express ()
+app.config = $.config
 
-app.static ()
+app.set ("trust proxy", true)
+app.use (express.static ("public"))
+app.use ($.express.function)
+app.use ($.express.check)
+app.use ($.express.setup)
+app.use ($.express.security)
 
-app.setup (async function (request, response, next) {
-	console.log (request.app);
-	next ();
+app.use (async function (request, response, next) {
+	next ()
 	})
 
 /**
@@ -52,7 +65,26 @@ app.setup (async function (request, response, next) {
  */
 
 app.get ("/", async function (request, response) {
-	response.html (response.output.render ())
+	response.send (response.output.render ())
+	})
+
+app.get ($.router.page ["about"], async function (request, response) {
+	response.send ("about page")
+	})
+
+/**
+ * error
+ *
+ * title
+ * description
+ * sub description
+ *
+ * xxx://xxx.xxx.xxx/xxx
+ */
+
+app.use (async function (request, response) {
+	console.log (request.path)
+	response.status ($.url.header.status.error.exist).html (response.output.render ())
 	})
 
 /**
@@ -65,46 +97,8 @@ app.get ("/", async function (request, response) {
  * xxx://xxx.xxx.xxx/xxx
  */
 
-app.get ("/robots.txt", async function (request, response) {
-	response.html ("xxx")
-	})
-
-/**
- * xxx
- *
- * title
- * description
- * sub description
- *
- * xxx://xxx.xxx.xxx/xxx
- */
-
-/**
- * xxx
- *
- * title
- * description
- * sub description
- *
- * xxx://xxx.xxx.xxx/xxx
- */
-
-app.catch (async function (request, response) {
-	response.status ($.url.header.status.error.found).html (response.output.render ())
-	})
-
-/**
- * xxx
- *
- * title
- * description
- * sub description
- *
- * xxx://xxx.xxx.xxx/xxx
- */
-
-app.listen ()
-define (module).export (app.export ())
+app.listen ($.config.port, $.config.host, function () { console.log (the.date.format ("full"), $.config.port) })
+define (module).export (app)
 
 /**
  * the end
