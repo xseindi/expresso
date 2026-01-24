@@ -22,10 +22,12 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"express.exe": "^0.0.1769246437823"
+		"express.exe": "^0.0.1769268632406"
 	},
 	"config": {
+		"debug": true,
 		"internet": true,
+		"http:secure": null,
 		"host": "0.0.0.0",
 		"port": null,
 		"db": {
@@ -36,7 +38,7 @@
 			"collection": {
 				"account": "69722e8e0017fa4fef69",
 				"app": "6971e2b70020e68f70fe",
-				"instance": "6971e42000101df62371",
+				"droplet": "6971e42000101df62371",
 				"theme": "6971e33000005e07788a",
 				"log": "6971e34e0031f9a14181"
 			}
