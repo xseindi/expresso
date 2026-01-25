@@ -22,14 +22,14 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"express.exe": "^0.0.1769340775001"
+		"express.exe": "^0.0.1769268632406"
 	},
 	"config": {
 		"debug": true,
-		"internet": true,
+		"internet": false,
 		"http:secure": null,
 		"host": "0.0.0.0",
-		"port": null,
+		"port": 80,
 		"cache:id": "001",
 		"cd:io": false,
 		"cd:url": "https://cd.vcredist.workers.dev",

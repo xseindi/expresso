@@ -1,0 +1,63 @@
+[
+
+{
+"serial": "2b385322-2417-4d6f-ae21-ce774bb3b7ae", "reference": null,
+"name": "Hello World",
+"gear": {
+	"processor": {"core": 1},
+	"memory": {"size": "512 MB"},
+	"storage": {"type": "SSD", "size": "100 MB", "size_of": 104857600},
+	"transfer": {"size": "1 GB", "size_of": 1073741824}
+	},
+"price": 0, "expire": 0,
+"type": "default", "status": "active",
+"label": [],
+"description": null
+},
+
+{
+"serial": "fa800a5f-36af-48af-8afe-ffa7c5a049c5", "reference": null,
+"name": "Cooper",
+"gear": {
+	"processor": {"core": 1},
+	"memory": {"size": "1 GB"},
+	"storage": {"type": "SSD", "size": "10 GB", "size_of": 10737418240},
+	"transfer": {"size": "1 TB", "size_of": 1099511627776}
+	},
+"price": 5, "expire": 30,
+"type": "premium", "status": "active",
+"label": ["popular"],
+"description": null
+},
+
+{
+"serial": "66004ed6-0c52-4aca-a490-cbec2b01bf9d", "reference": null,
+"name": "Silver",
+"gear": {
+	"processor": {"core": 1},
+	"memory": {"size": "2 GB"},
+	"storage": {"type": "SSD", "size": "25 GB", "size_of": 26843545600},
+	"transfer": {"size": "2 TB", "size_of": 2199023255552}
+	},
+"price": 10, "expire": 30,
+"type": "premium", "status": "active",
+"label": [],
+"description": null
+},
+
+{
+"serial": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "reference": null,
+"name": "Gold",
+"gear": {
+	"processor": {"core": 2},
+	"memory": {"size": "4 GB"},
+	"storage": {"type": "SSD", "size": "50 GB", "size_of": 53687091200},
+	"transfer": {"size": "3 TB", "size_of": 3298534883328}
+	},
+"price": 20, "expire": 30,
+"type": "premium", "status": "active",
+"label": [],
+"description": null
+}
+
+]
