@@ -11,6 +11,7 @@
 var express = require ("express.exe")
 var $ = require ("script.io.js")
 const {define} = $
+const {one, zero} = $
 
 var app = new express.app
 app.router = require ("../src/router.json")

@@ -2,7 +2,6 @@
 "robot:text": "/robots.txt",
 "favorite.ico": "/favicon.ico",
 
-
 "style.css": "/asset/css/style.css",
 "prototype.js": "/asset/js/prototype.js",
 "vue.js": "/theme/:slug/:version/vue.js",
@@ -42,6 +41,12 @@
 "cpanel app:create": "/app/create",
 "cpanel app:edit": "/app/:id/edit",
 "cpanel app:delete": "/app/:id/delete",
+
+"cgi-bin": "/cgi-bin/",
+"cgi-bin sitemap generate": "/cgi-bin/sitemap/generate",
+"gateway": {
+	"article": "/cgi-bin/article"
+	},
 
 "*": ""
 }

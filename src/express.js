@@ -1,7 +1,6 @@
 var $ = require ("script.io.js")
 const {define} = $
-const one = 1
-const zero = 0
+const {one, zero} = $
 
 function library (r, respond, next) {
 	r.library ()
@@ -68,14 +67,22 @@ async function setup (request, response, next) {
 async function template (request, response, next) {
 	if (this.app) {
 		if (true) {
+			response.var.title = this.app.meta ["title"]
+			response.var.author = response.var ["site:name"] = this.app.meta ["site:name"]
+			response.var ["site:alternate-name"] = this.app.meta ["site:alternate-name"]
+			response.var.description = response.var ["meta:description"] = this.app.meta ["meta:description"]
+			response.var.rating = this.app.meta ["meta:rating"]
+			response.var.robot = this.app.meta ["meta:robot"]
+			response.var.keyword = this.app.meta ["meta:keyword"]
+			response.var.base_url = request.base_url
+			response.var.canonical = request.canonical
 			response.output.config ["manifest.json"] = this.app.meta.setting ["manifest.json"]
 			response.output.config ["feed.xml"] = this.app.meta.setting ["feed.xml"]
 			response.output.config ["feed.xml:atom"] = this.app.meta.setting ["feed.xml:atom"]
 			response.output.set ("language", "en")
 			response.output.set ("html:attribute", {translate: "no", prefix: "og: http://ogp.me/ns#"})
-			response.output.set ("canonical", request.canonical)
-			response.output.set ("favorite.ico", request.base_url.join ("/favicon.ico"))
-			response.output.set ("debug", JSON.pretty ({visitor: request.visitor, header: request.headers}))
+			response.output.set ("favorite.ico", request.base_url + request.router ("favorite.ico", {}, request.cache.hash))
+			if (response.app.config.debug) response.output.set ("debug", JSON.pretty ({visitor: request.visitor, header: request.headers}))
 			if (false) response.output.set ("meta", {attribute: {name: "key", content: "value"}})
 			}
 		if (true) {

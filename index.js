@@ -60,6 +60,7 @@ app.dir = {
 
 app.set ("trust proxy", true)
 app.use (express.static ("public"))
+
 app.use ($$$.express.function)
 app.use ($$$.express.check)
 app.use ($$$.express.cache)
@@ -69,8 +70,10 @@ express.app.router (app, $$$.express.static)
 app.use ($$$.express.setup)
 app.use ($$$.express.template)
 app.use ($$$.express.security)
+
 app.use (async function (request, response, next) {
-	console.log (this.app)
+	response.log (this.app)
+	response.capture (this.app)
 	next ()
 	})
 

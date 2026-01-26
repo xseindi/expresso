@@ -4,16 +4,16 @@
 {"serial": "e1488462-1509-425a-94a1-55d37aa64de7", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "sexpresso.vercel.app", "type": "alias", "status": "active"},
 {"serial": "f2c8a6ac-2900-4db8-b602-545a239fb187", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.com", "type": "alias", "status": "active"},
 {"serial": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "www.newbizen.com", "type": "alias", "status": "active"},
-{"serial": "4e17c17b-5a9a-43e5-9b8c-42b5e3254563", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cpanel.newbizen.com", "type": "control-panel", "status": "active"},
-{"serial": "7db7c726-6555-41d3-8b74-a699a0aa0c16", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.pro", "type": "alias", "status": "active"},
-{"serial": "81d1313a-355e-4191-8797-a6351ee89dfa", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cpanel.newbizen.pro", "type": "control-panel", "status": "active"},
+{"serial": "4e17c17b-5a9a-43e5-9b8c-42b5e3254563", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.com", "type": "control-panel", "status": "active"},
+{"serial": "7db7c726-6555-41d3-8b74-a699a0aa0c16", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "newbizen.online", "type": "alias", "status": "active"},
+{"serial": "81d1313a-355e-4191-8797-a6351ee89dfa", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.newbizen.online", "type": "control-panel", "status": "active"},
 {"serial": "f2c8a6ac-2900-4db8-b602-545a239fb187", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "netizen.com", "type": "alias", "status": "active"},
 {"serial": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "www.netizen.com", "type": "alias", "status": "active"},
-{"serial": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cpanel.netizen.com", "type": "control-panel", "status": "active"},
+{"serial": "c4d50c0c-12b3-4065-a076-5b26ca017017", "reference": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "host": "cloud.netizen.com", "type": "control-panel", "status": "active"},
 {
 "serial": "4c24018f-81a7-48d3-9e05-2b53a388b0e4", "reference": null,
 "name": "Newbie Citizen",
-"host": "4c24018f-81a7-48d3-9e05-2b53a388b0e4.newbizen.com",
+"host": "4c24018f-81a7-48d3-9e05-2b53a388b0e4.newbizen.com", "domain": "sexpresso.vercel.app",
 "droplet": {"serial": "89ea20a1-beb0-4c19-9fe5-489d69ab64ca", "since": 0, "location": "US"},
 "theme": {
 	"list": [
@@ -37,20 +37,22 @@
 		]
 	},
 "meta": {
-	"site:name": "",
-	"site:title": "",
-	"site:tagline": "",
+	"title": "Newbizen — Everything You Need to Build Your Website",
+	"site:name": "Newbie Citizen",
+	"site:alternate-name": "Website Publishing Platform",
+	"site:tagline": "Once you try it, You won't leave it.",
 	"site:description": "",
-	"meta:description": null,
+	"meta:description": "Create your Website with built-in Premium Themes by Default, and Powerful Tools. No technical setup required. Start building today.",
 	"meta:viewport": null,
 	"meta:generator": null,
-	"meta:keyword": [],
+	"meta:keyword": ["website builder", "premium themes"],
 	"meta:robot": null,
 	"meta:rating": null,
 	"setting": {
 		"manifest.json": false,
 		"feed.xml": false,
-		"feed.xml:atom": false
+		"feed.xml:atom": false,
+		"data:api": {"type": ["default"], "status": "active"}
 		},
 	"print_f": {
 		"title:index": "{site:title}",

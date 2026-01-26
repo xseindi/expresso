@@ -22,10 +22,10 @@
 		"test": "nodemon"
 	},
 	"dependencies": {
-		"express.exe": "^0.0.1769340775001"
+		"express.exe": "^0.0.1769396764698"
 	},
 	"config": {
-		"debug": true,
+		"debug": false,
 		"internet": true,
 		"http:secure": null,
 		"host": "0.0.0.0",

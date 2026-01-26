@@ -11,6 +11,7 @@
 var express = require ("express.exe")
 var $ = require ("script.io.js")
 const {define} = $
+const {one, zero} = $
 
 var app = new express.app
 app.router = require ("../src/router.json")
@@ -28,19 +29,22 @@ app.router = require ("../src/router.json")
 app.get ("/", async function (request, response, next) {
 	if (this.app.type_of.site) {
 		response.vue ({
-			layout: "",
-			router: "",
+			layout: "index",
+			router: "index",
 			var: {j: "son"},
 			})
+		/*
 		console.log (response.var)
 		response.output.set ("vue.app.theme", JSON.stringify ({layout: response.vue.proto.layout, router: response.vue.proto.router}))
+		response.output.set ("vue.app.var", JSON.stringify ({layout: response.vue.proto.layout, router: response.vue.proto.router}))
 		var populate = {
-			base_url: request.base_url,
+			... response.var,
 			"vue.app.var": JSON.stringify (response.vue.proto.var),
 			}
 		var template_test = $.html.template.test ()
 		var render = response.output.populate (populate).render (template_test)
-		response.send (render)
+		*/
+		response.html ().send ()
 		}
 	else next ()
 	})
